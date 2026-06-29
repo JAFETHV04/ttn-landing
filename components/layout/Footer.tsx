@@ -28,8 +28,8 @@ export default function Footer() {
         background: "linear-gradient(180deg,#021a47,#01102e)",
       }}
     >
-      <div className="mx-auto px-9 pt-16" style={{ maxWidth: 1280 }}>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 pb-12">
+      <div className="mx-auto px-5 md:px-9 pt-12 md:pt-16" style={{ maxWidth: 1280 }}>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-10 pb-10 md:pb-12">
           {/* Col 1: Logo + social */}
           <div className="col-span-2 md:col-span-1">
             <Image
@@ -216,10 +216,6 @@ export default function Footer() {
           style={{
             borderTop: "1px solid rgba(255,255,255,0.08)",
             background: "rgba(0,0,0,0.2)",
-            marginLeft: -36,
-            marginRight: -36,
-            paddingLeft: 36,
-            paddingRight: 36,
           }}
         >
           <p className="text-white/40" style={{ fontSize: 13 }}>

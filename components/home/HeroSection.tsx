@@ -6,8 +6,10 @@ export default function HeroSection() {
       <Image
         src="/images/hero.png"
         alt="Energía limpia, ahorro inteligente"
-        width={1920}
-        height={720}
+        width={1713}
+        height={600}
+        quality={100}
+        sizes="100vw"
         className="w-full block"
         priority
       />

@@ -32,7 +32,6 @@ export default function PricingCard({
           background: "linear-gradient(165deg,#4f74ff,#3a55dd)",
           boxShadow: "0 22px 44px rgba(54,82,220,.34)",
           padding: "34px 30px",
-          marginTop: -12,
           zIndex: 10,
         }}
       >
