@@ -10,8 +10,11 @@ export default function CalculatorPage() {
     <div>
       {/* Hero */}
       <div
+        className="w-full"
         style={{
-          height: 300,
+          aspectRatio: "16/5",
+          minHeight: 160,
+          maxHeight: 320,
           backgroundImage: "url('/images/hero.png')",
           backgroundSize: "cover",
           backgroundPosition: "center 32%",
@@ -19,7 +22,7 @@ export default function CalculatorPage() {
       />
 
       <div
-        className="mx-auto py-14 px-9"
+        className="mx-auto py-10 md:py-14 px-4 md:px-9"
         style={{ maxWidth: 1180 }}
       >
         {/* Heading */}

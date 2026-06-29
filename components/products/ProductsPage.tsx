@@ -12,8 +12,11 @@ export default function ProductsPage() {
     <div>
       {/* Hero */}
       <div
+        className="w-full"
         style={{
-          height: 260,
+          aspectRatio: "16/5",
+          minHeight: 160,
+          maxHeight: 320,
           backgroundImage: "url('/images/hero.png')",
           backgroundSize: "cover",
           backgroundPosition: "center 32%",
