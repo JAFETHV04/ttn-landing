@@ -183,14 +183,12 @@ export default function ProductsPage() {
 
         {/* Product grid */}
         <div className="flex-1 min-w-0">
-          <div className="products-scroll overflow-y-auto md:max-h-[calc(100vh-140px)] md:pr-2 mb-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 pb-1">
-              {filteredProducts.map((product, i) => (
-                <Reveal key={product.id} variant="up" delay={(i % 4) * 60} className="h-full">
-                  <ProductCard {...product} />
-                </Reveal>
-              ))}
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 mb-8">
+            {filteredProducts.map((product, i) => (
+              <Reveal key={product.id} variant="up" delay={(i % 4) * 60} className="h-full">
+                <ProductCard {...product} />
+              </Reveal>
+            ))}
           </div>
 
           {/* Trust badges */}
