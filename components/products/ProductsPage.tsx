@@ -3,10 +3,17 @@
 import { useState } from "react";
 import { products, productCategories, trustBadges } from "@/lib/data";
 import ProductCard from "@/components/ui/ProductCard";
+import Reveal from "@/components/ui/Reveal";
 
 export default function ProductsPage() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState(0);
+
+  const activeLabel = productCategories[activeCategory].label;
+  const filteredProducts =
+    activeCategory === 0
+      ? products
+      : products.filter((product) => product.category === activeLabel);
 
   return (
     <div>
@@ -47,7 +54,7 @@ export default function ProductsPage() {
       {/* Mobile: filter toggle bar */}
       <div className="md:hidden px-4 py-3 flex items-center justify-between bg-white border-b border-[#edeef4]">
         <span className="font-semibold text-sm" style={{ color: "#16245c" }}>
-          {products.length} productos encontrados
+          {filteredProducts.length} productos encontrados
         </span>
         <button
           onClick={() => setFiltersOpen((v) => !v)}
@@ -75,6 +82,7 @@ export default function ProductsPage() {
               Filtrar por marca
             </h4>
             <select
+              aria-label="Filtrar por marca"
               className="w-full rounded-lg px-3 py-2 font-semibold text-sm"
               style={{ border: "1px solid #edeef4", color: "#5a6275" }}
             >
@@ -103,7 +111,7 @@ export default function ProductsPage() {
       <div className="mx-auto flex flex-col md:flex-row gap-6 md:gap-8 py-6 md:py-12 px-4 md:px-9" style={{ maxWidth: 1280 }}>
 
         {/* Sidebar — desktop only */}
-        <aside className="hidden md:block" style={{ width: 260, flexShrink: 0 }}>
+        <aside className="hidden md:block self-start md:sticky md:top-6" style={{ width: 260, flexShrink: 0 }}>
           {/* Categories */}
           <div
             className="rounded-xl p-5 mb-5"
@@ -145,6 +153,7 @@ export default function ProductsPage() {
               Filtrar por marca
             </h3>
             <select
+              aria-label="Filtrar por marca"
               className="w-full rounded-lg px-3 py-2 font-semibold text-sm"
               style={{ border: "1px solid #edeef4", color: "#5a6275" }}
             >
@@ -174,10 +183,14 @@ export default function ProductsPage() {
 
         {/* Product grid */}
         <div className="flex-1 min-w-0">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 mb-8">
-            {products.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
+          <div className="products-scroll overflow-y-auto md:max-h-[calc(100vh-140px)] md:pr-2 mb-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 pb-1">
+              {filteredProducts.map((product, i) => (
+                <Reveal key={product.id} variant="up" delay={(i % 4) * 60} className="h-full">
+                  <ProductCard {...product} />
+                </Reveal>
+              ))}
+            </div>
           </div>
 
           {/* Trust badges */}
