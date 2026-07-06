@@ -24,7 +24,7 @@ export default function ProductsPage() {
           aspectRatio: "16/5",
           minHeight: 160,
           maxHeight: 320,
-          backgroundImage: "url('/images/hero.png')",
+          backgroundImage: "url('/images/hero@2x.png')",
           backgroundSize: "cover",
           backgroundPosition: "center 32%",
         }}

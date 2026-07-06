@@ -15,7 +15,7 @@ export default function CalculatorPage() {
           aspectRatio: "16/5",
           minHeight: 160,
           maxHeight: 320,
-          backgroundImage: "url('/images/hero.png')",
+          backgroundImage: "url('/images/hero@2x.png')",
           backgroundSize: "cover",
           backgroundPosition: "center 32%",
         }}
@@ -80,13 +80,8 @@ export default function CalculatorPage() {
                 Sistema solar
               </label>
               <select
-                className="w-full rounded-xl px-4 py-3 font-semibold"
-                style={{
-                  background: "rgba(255,255,255,0.15)",
-                  color: "white",
-                  border: "1px solid rgba(255,255,255,0.3)",
-                  fontSize: 14,
-                }}
+                aria-label="Sistema solar"
+                className="w-full rounded-xl px-4 py-3 font-semibold text-sm text-white bg-white/15 border border-white/30"
               >
                 <option style={{ color: "#16245c" }}>
                   Plan Estándar - 5 Paneles + Inversor + Batería
